@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1051421128172",
+    "firebase_url": "https://xisd-project-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "xisd-project",
+    "storage_bucket": "xisd-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1051421128172:android:00c653aa7b81e1bddcfcc9",
+        "android_client_info": {
+          "package_name": "com.example.wilfashionpage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1051421128172-n1qrh07iadrn9mk3bkqheeleadpn3uhc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaN95KfrzqiWhosZNyoiOvE5no_DhrfJs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1051421128172-n1qrh07iadrn9mk3bkqheeleadpn3uhc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

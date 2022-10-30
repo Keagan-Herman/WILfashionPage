@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">WILfashionPage</string>
+
+    <string name="first_slide">Choose your product</string>
+    <string name="second_slide">Delivery</string>
+    <string name="third_slide">Good service</string>
+
+    <string name="description">We have an assortment of handbags and a variety of clothes to choose from</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="name">Name</string>
+</resources>
