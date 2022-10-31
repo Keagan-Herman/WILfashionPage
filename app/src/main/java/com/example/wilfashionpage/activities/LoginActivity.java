@@ -31,7 +31,7 @@ public class LoginActivity extends AppCompatActivity {
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
 
-        getSupportActionBar().hide();
+        //getSupportActionBar().hide();
     }
 
     public void signIn(View view) {
