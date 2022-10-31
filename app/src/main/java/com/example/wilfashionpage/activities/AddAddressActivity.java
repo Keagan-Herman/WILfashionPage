@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -61,19 +62,19 @@ public class AddAddressActivity extends AppCompatActivity {
                 String final_address = "";
 
                 if (!userName.isEmpty()){
-                    final_address+=userName;
+                    final_address+=userName + ", ";
                 }
                 if (!userCity.isEmpty()){
-                    final_address+=userCity;
+                    final_address+=userCity + ", ";
                 }
                 if (!userAddress.isEmpty()){
-                    final_address+=userAddress;
+                    final_address+=userAddress + ", ";
                 }
                 if (!userCode.isEmpty()){
-                    final_address+=userCode;
+                    final_address+=userCode + ", ";
                 }
                 if (!userNumber.isEmpty()){
-                    final_address+=userNumber;
+                    final_address+=userNumber + ", ";
                 }
                 if (!userName.isEmpty() && !userCity.isEmpty() && !userAddress.isEmpty() && !userCode.isEmpty() && !userNumber.isEmpty()){
 
@@ -86,6 +87,8 @@ public class AddAddressActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<DocumentReference> task) {
                             if (task.isSuccessful()){
                                 Toast.makeText(AddAddressActivity.this, "Address Added", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(AddAddressActivity.this, DetailedActivity.class));
+                                finish();
                             }
                         }
                     });
