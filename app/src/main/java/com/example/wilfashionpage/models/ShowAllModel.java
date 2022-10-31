@@ -2,18 +2,16 @@ package com.example.wilfashionpage.models;
 
 import java.io.Serializable;
 
-public class NewProductsModel implements Serializable {
-
+public class ShowAllModel implements Serializable {
     String description;
     String name;
     int price;
     String img_url;
 
-    public NewProductsModel() {
-
+    public ShowAllModel() {
     }
 
-    public NewProductsModel(String description, String name, int price, String img_url) {
+    public ShowAllModel(String description, String name, int price, String img_url) {
         this.description = description;
         this.name = name;
         this.price = price;

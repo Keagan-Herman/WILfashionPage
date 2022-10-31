@@ -13,37 +13,39 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.wilfashionpage.R;
-import com.example.wilfashionpage.activities.ShowAllActivity;
-import com.example.wilfashionpage.models.CategoryModel;
+import com.example.wilfashionpage.activities.DetailedActivity;
+import com.example.wilfashionpage.models.ShowAllModel;
 
 import java.util.List;
 
-public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHolder> {
+public class ShowAllAdapter extends RecyclerView.Adapter<ShowAllAdapter.ViewHolder> {
 
     private Context context;
-    private List<CategoryModel> list;
+    private List<ShowAllModel> list;
 
-    public CategoryAdapter(Context context, List<CategoryModel> list){
+    public ShowAllAdapter(Context context, List<ShowAllModel> list) {
         this.context = context;
         this.list = list;
     }
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.category_list,parent,false));
+        return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.show_all_items, parent, false));
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        Glide.with(context).load(list.get(position).getImg_url()).into(holder.catImg);
-        holder.catName.setText(list.get(position).getName());
+        Glide.with(context).load(list.get(position).getImg_url()).into(holder.mItemImage);
+        holder.mCost.setText("R"+list.get(position).getPrice());
+        holder.mName.setText(list.get(position).getName());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, ShowAllActivity.class);
-                intent.putExtra("type", list.get(position).getType());
+                Intent intent = new Intent(context, DetailedActivity.class);
+                intent.putExtra("detailed", list.get(position));
                 context.startActivity(intent);
             }
         });
@@ -52,19 +54,22 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
 
     @Override
     public int getItemCount() {
-
         return list.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        ImageView catImg;
-        TextView catName;
+        private ImageView mItemImage;
+        private TextView mCost;
+        private TextView mName;
+
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            catImg = itemView.findViewById(R.id.cat_img);
-            catName = itemView.findViewById(R.id.cat_name);
 
+            mItemImage = itemView.findViewById(R.id.item_image);
+            mCost = itemView.findViewById(R.id.item_cost);
+            mName = itemView.findViewById(R.id.item_name);
         }
     }
 }
